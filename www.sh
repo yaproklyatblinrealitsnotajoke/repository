@@ -1,5 +1,4 @@
 #!/bin/bash
-mkdir public_html
 cd public_html
 echo "<a href="1.html">Start" > index.html
 
