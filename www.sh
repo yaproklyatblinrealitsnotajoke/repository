@@ -1,26 +1,32 @@
 #!/bin/bash
-cd public_html
-echo "<a href="1.html">Start" > index.html
+mkdir public_html
+# echo "<html><body>" > public_html/index.html
+echo "<h1>Угадай число</h1>" > public_html/index.html
+# echo "<br><a href=\"1.html\">Start</a></body></html>" >> public_html/index.html
 
-guess=$((RANDOM % 100 + 1))
+numm=$((RANDOM % 100 + 1))
 for ((i=1; i<=100; i++))
 do
-  if [ $i -eq $guess ]
-  then
-  echo "Вы угадали число!" > $i.html
-  fi
-  if [ $i -gt $guess ]
-  then
-      echo "Загаданное число меньше" > $i.html
-  fi
+        echo "<a href=\"$i.html\">$i</a>" >> public_html/index.html
 
-  if [ $i -lt $guess ]
-  then
-      echo "Загаданное число больше" > $i.html
-  fi
+        if [ $i -eq $numm ]
+                then
+                        echo "<h1>Вы угадали</h1>" >> public_html/$i.html
+                else
+                        if [ $i -gt $numm ]
+                        then
+                                echo "<h1>число меньше</h1>" >> public_html/$i.html
+                        else
+                                echo "<h1>число больше</h1>" >> public_html/$i.html
+                fi
+        fi
+
+        echo "<br>" >> public_html/$i.html
+
+        for ((j=1; j<=100; j++))
+        do
+                echo "<a href=\"$j.html\">$j</a>" >> public_html/$i.html
+        done
+
+        echo "<br><br><a href=\"index.html\">home</a>" >> public_html/$i.html
 done
-for ((i=1; i<=100; i++))
-do
-echo "Число: $i" >> $i.html
-done
-  
