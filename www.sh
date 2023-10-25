@@ -1,7 +1,7 @@
 #!/bin/bash
 mkdir public_html
 # echo "<html><body>" > public_html/index.html
-echo "<h1>Угадай число</h1>" > public_html/index.html
+echo "<h1>Ugadai chislo</h1>" > public_html/index.html
 # echo "<br><a href=\"1.html\">Start</a></body></html>" >> public_html/index.html
 
 numm=$((RANDOM % 100 + 1))
@@ -11,13 +11,13 @@ do
 
         if [ $i -eq $numm ]
                 then
-                        echo "<h1>Вы угадали</h1>" >> public_html/$i.html
+                        echo "<h1>Vi ugadali!!!</h1>" >> public_html/$i.html
                 else
                         if [ $i -gt $numm ]
                         then
-                                echo "<h1>число меньше</h1>" >> public_html/$i.html
+                                echo "<h1>chislo men'she</h1>" >> public_html/$i.html
                         else
-                                echo "<h1>число больше</h1>" >> public_html/$i.html
+                                echo "<h1>cislo bolshe</h1>" >> public_html/$i.html
                 fi
         fi
 
